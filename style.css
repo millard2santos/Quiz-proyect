@@ -19,6 +19,9 @@ padding: 20px;
 
 .holdCards{
     display: flex;
+    gap: 40px;
+    font-size: 30px;
+    
 }
 
 h1 {
