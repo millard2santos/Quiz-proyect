@@ -1,14 +1,36 @@
-*{
+:root {
+    --verde: #B7CBBF;
+    --rojo: #F9A799;
+    --carne: #F4BFAD;
+    --crema: #F5DABD;
+
+}
+
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-}
-#container{
-display: flex;
-padding: 20px;
+    font-size: 30px;
 }
 
-.container{
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: var(--carne);
+    
+}
+
+input,
+select {
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#container {
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -17,16 +39,15 @@ padding: 20px;
     padding: 20px
 }
 
-.holdCards{
+.holdCards {
     display: flex;
     gap: 40px;
     font-size: 30px;
-    
+
 }
 
 h1 {
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 .namePlayer {
@@ -34,5 +55,6 @@ h1 {
     align-content: center;
 }
 
-
-
+.btnStart {
+    padding: 10px;
+}

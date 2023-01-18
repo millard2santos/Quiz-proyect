@@ -18,15 +18,16 @@ const changeText = (localArray) => {
     lastItem.incorrectAnswers.forEach(e=> showAnswer.push(e))
 
     
-    console.log(lastItem.correctAnswer);
+    
     return showAnswer.sort()
 }
 
 api()
 .then(res => {
-    changeText(res).forEach((elements,i) => {
-        options[i].innerText = elements
-    })
+    // changeText(res).forEach((elements,i) => {
+    //     options[i].innerText = elements
+    // })
+    res.forEach(e => console.log(e))
     
 } )
 
