@@ -7,16 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>QUIZ!</title>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>
 
-    <h1>QuizM2</h1>
     <div id="container">
-        <label for="nombre">Nombre:</label>
-        <input type="text" placeholder="nombre" id="nombre" class="namePlayer">
-        <label for="categorias">Categorias</label>
+        <h1>QuizM2</h1>
+        <input type="text" placeholder="nombre" id="nombre" class="namePlayer" required>
+        
         <select id="category" name="carreras" class="category">
             <option value="All">Todos</option>
             <option value="Arte y Literatura">Arte y Literatura</option>
@@ -31,7 +35,7 @@
             <option value="Deportes">Deportes</option>
         </select>
         <input type="submit" class="btnStart" value="Empezar!">
-    </div> 
+    </div>
 
 
     <script src="main.js"></script>
