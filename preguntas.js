@@ -8,50 +8,54 @@ const questions = document.querySelector("h2")
 const answers = document.querySelectorAll("article")
 const btnNext = document.querySelector("button")
 
-//imprime las respuestas y lo ingresa en un array en forma ordenada alfabeticamente
+// ingresa la respuesta correcta en un array en forma ordenada alfabeticamente
 const imprimirPregunta = (res) => {
     res[0].incorrectAnswers.push(res[0].correctAnswer)
     let arrayAll = res[0].incorrectAnswers.sort()
 
+// muestra la pregunta en el H2
     questions.innerText = res[0].question
     answers.forEach((e, i) => {
         e.innerText = arrayAll[i]
+        
     });
     console.log(res[0].correctAnswer);
 
 
+  let puntos = 0;
+  let maxPuntos = 10;
 
-    //   for each en article y cada vez que se seleccione esa alternativa
-    answers.forEach((alternativa,i) => {
+    //   for each en article y cada vez que se seleccion suma punto
+    answers.forEach((alternativa, ) => {
         alternativa.addEventListener("click", event => {
-            console.log(i);
+           
+            
             answers.forEach(e => {
 
-                if(e.innerText === res[0].correctAnswer){
-
+                if (e.innerText === res[0].correctAnswer && puntos < maxPuntos) {
                     e.style = "background-color: blue"
-                }else{
+                    puntos++
+                } else {
                     e.style = "background-color: red"
-
                 }
-                
-                
+                localStorage.setItem("puntos", JSON.stringify(puntos))
             })
-            // if (event.target.innerText == res[0].correctAnswer) {
-            //     event.target.style = "background-color: blue"
-            //     console.log("bien");
-            // }
-            // else {
-            //     event.target.style = "background-color: red"
-            //     console.log("mal");
-            // }
+
+            const showbtn = () => {
+                btnNext.style.display = "block";
+                
+            }
+            showbtn()
         })
     });
 
+  
 }
 
-// funcion que muestra la pregunta
+// funcion que muestra la pregunta 
 const recogerPregunta = () => {
+
+    btnNext.style.display= "none"
     return fetch(`https://the-trivia-api.com/api/questions?categories=${user.categoria}&limit=1`)
         .then(response => response.json())
 
@@ -73,25 +77,6 @@ btnNext.addEventListener("click", () => {
 
 
 
-//hacer un foreach para iterar el  array de preguntas y aplicarle una funcion a cada elelmento
-// answers.forEach(alternativa => {
-//     alternativa.addEventListener(("click"), event => {
-//       if(event.target == res[0].correctAnswer)  {
-//         console.log("bien");
-//       }
-//       else {
-//         console.log("mal");
-//       }
-
-//     })
-
-// });
-
-// for (const item of answerDiv.children) {
-//     if(item.innerText === correctAnswer) {
-//         item.classList.add("correctAnswer");
-//     }
-// }
 
 
 

@@ -49,9 +49,9 @@ const findAnswer = (respuesta1) => {
 let userQuiz = [];                                       //se crea un arrray vacio para guardar el objeto "user"
 const form = document.querySelector("form")              // selecciono el form 
 form.addEventListener("submit", (event) => {             // escucha cuando se envia el form
-    event.preventDefault();    
-     
-                                            // detiene el envio automatico de submit antes que se ejecute codigo
+    event.preventDefault();
+
+    // detiene el envio automatico de submit antes que se ejecute codigo
     const user = {                                       //se creo el objeto con sus keys
         name: event.target.name.value,
         categoria: event.target.category.value,
