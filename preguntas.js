@@ -6,7 +6,7 @@ let user = JSON.parse(localStorage.getItem("player"))  //en la variable se llama
 
 const questions = document.querySelector(".question p:first-child")
 const answers = document.querySelectorAll(".card")
-const btnNext = document.querySelector(".next")
+const btnNext = document.querySelector("#next")
 
 let resRight = 0;
 let blockAnswer = false
@@ -42,10 +42,9 @@ const imprimirPregunta = (res) => {
             answers.forEach(e => {
 
                 if (e.innerText === res[0].correctAnswer) {
-                    e.style = "background-color: blue"
-
+                    e.classList.add('correct')
                 } else {
-                    e.style = "background-color: red"
+                    e.classList.add('incorrect')
                 }
 
 
@@ -55,7 +54,7 @@ const imprimirPregunta = (res) => {
             btnNext.style.display = "block"
         })
     });
-
+    
 }
 
 
@@ -68,7 +67,7 @@ const imprimirPregunta = (res) => {
 // funcion que muestra la pregunta 
 const recogerPregunta = () => {
     answers.forEach(e => {                     // reinicia las alternativas en la siguiente pregunta
-        e.style = "background-color: white"
+        
     })
 
     btnNext.style.display = "none"             // el boton no esta aparece cuando se muestra las alternativas
@@ -86,6 +85,17 @@ recogerPregunta()
     })
 
 btnNext.addEventListener("click", () => {
+    answers.forEach(e => {
+        console.log(e.className.includes('correct'));
+        if (e.className.includes('incorrect')) {
+            e.classList.remove('incorrect')
+        } else {
+            e.classList.remove('correct')
+        }
+
+    })
+
+
         blockAnswer = false
         recogerPregunta()
         .then(data => {

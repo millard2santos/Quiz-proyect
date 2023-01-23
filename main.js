@@ -72,10 +72,16 @@ form.addEventListener("submit", (event) => {             // escucha cuando se en
         }
     }
 
+    window.open('./preguntas.html','_self')
+
     // fetch(`https://the-trivia-api.com/api/questions?categories=${user.categoria}&limit=1`)
     //     .then(response => response.json())
     //     .then(data => localStorage.setItem("questionBank", JSON.stringify(data)))
 
 })
+
+
+
+
 
 

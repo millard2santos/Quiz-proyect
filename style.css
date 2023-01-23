@@ -150,3 +150,10 @@ article{
 .n4 {
     background-color: #F0997D;
 }
+
+.correct{
+    background-color: #FFC3A1;
+}
+.incorrect{
+    background-color: #A75D5D;
+}
