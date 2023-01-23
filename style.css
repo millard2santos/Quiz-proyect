@@ -40,6 +40,13 @@ h2 {
     background: radial-gradient(#FFC3A1, #A75D5D);
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+}
 
 
 input,

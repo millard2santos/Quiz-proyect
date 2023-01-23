@@ -1,12 +1,12 @@
 // LLAMA LO QUE CONTIENE LA BASE DE DATOS (userQuiz)
 let userQuiz = JSON.parse(localStorage.getItem("userQuiz"))    //en la variable se llama y transforma el string en un objeto y se llama al Key que esta en el localStorage
 let user = JSON.parse(localStorage.getItem("player"))  //en la variable se llama y transforma el string en un objeto y se llama al Key que esta en el localStorage
-let questionBank = JSON.parse(localStorage.getItem("questionBank"))
+// let questionBank = JSON.parse(localStorage.getItem("questionBank"))
 
 
-const questions = document.querySelector("h2")
-const answers = document.querySelectorAll("article")
-const btnNext = document.querySelector("button")
+const questions = document.querySelector(".question p:first-child")
+const answers = document.querySelectorAll(".card")
+const btnNext = document.querySelector(".next")
 
 let resRight = 0;
 let blockAnswer = false
